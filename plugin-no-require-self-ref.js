@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   meta: {
     docs: {
@@ -9,7 +11,9 @@ module.exports = {
   create (context) {
     return {
       CallExpression (node) {
-        if (node.callee.name === 'require' && node.arguments[0].value === 'require-self-ref') {
+        var requireArg
+        if (node.callee.name === 'require' &&
+          (((requireArg = node.arguments[0].value) === 'require-self-ref') || requireArg[0] === '~')) {
           context.report({
             node,
             message: 'Unexpected usage of "require-self-ref".'
