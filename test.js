@@ -1,3 +1,5 @@
+'use strict'
+
 const RuleTester = require('eslint').RuleTester
 const rule = require('./plugin-no-require-self-ref')
 
