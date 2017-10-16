@@ -1,8 +1,8 @@
 # eslint-plugin-no-require-self-ref
 
 [`require-self-ref`](https://github.com/patrick-steele-idem/require-self-ref)
-should only be used in certain projects in directories. It is not recommended to
-ship [npm](https://www.npmjs.com/) that are using `require-self-ref`.
+should only be used in certain directories of projects. It is not recommended to
+ship [npm](https://www.npmjs.com/) packages that are using `require-self-ref`.
 
 ## Installation
 
