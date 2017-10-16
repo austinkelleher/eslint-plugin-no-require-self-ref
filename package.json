@@ -3,6 +3,11 @@
   "version": "1.0.1",
   "description": "Disabling the ability to require require-self-ref",
   "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "nyc node ./test.js",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/austinkelleher/eslint-plugin-no-require-self-ref.git"
@@ -21,11 +26,13 @@
   },
   "homepage": "https://github.com/austinkelleher/eslint-plugin-no-require-self-ref#readme",
   "devDependencies": {
+    "codecov": "^2.3.1",
     "eslint": "^4.9.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.2.0",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "nyc": "^11.2.1"
   }
 }
