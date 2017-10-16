@@ -16,8 +16,11 @@ npm install eslint-plugin-no-require-self-ref --save-dev
 
 ```json
 {
+  "plugins": [
+    "no-require-self-ref"
+  ],
   "rules": {
-    "no-require-self-ref": "error"
+    "no-require-self-ref/no-require-self-ref": "error"
   }
 }
 ```
@@ -27,8 +30,11 @@ in your test folder:
 
 ```json
 {
+  "plugins": [
+    "no-require-self-ref"
+  ],
   "rules": {
-    "no-require-self-ref": "off"
+    "no-require-self-ref/no-require-self-ref": "off"
   }
 }
 ```
