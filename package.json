@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-no-require-self-ref",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Disabling the ability to require require-self-ref",
   "main": "index.js",
   "scripts": {
