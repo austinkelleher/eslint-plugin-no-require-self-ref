@@ -11,13 +11,15 @@ module.exports = {
   create (context) {
     return {
       CallExpression (node) {
-        let requireArg
-        if (node.callee.name === 'require' &&
-          (((requireArg = node.arguments[0].value) === 'require-self-ref') || requireArg[0] === '~')) {
-          context.report({
-            node,
-            message: 'Unexpected usage of "require-self-ref".'
-          })
+        if (node.callee.name === 'require' && node.arguments) {
+          const requireArg = node.arguments[0].value
+
+          if (requireArg && (requireArg === 'require-self-ref' || requireArg[0] === '~')) {
+            context.report({
+              node,
+              message: 'Unexpected usage of "require-self-ref".'
+            })
+          }
         }
       }
     }
